@@ -1,6 +1,7 @@
 package basics;
 
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -9,10 +10,24 @@ public class Student {
     private int rollNumber;
     private String studentName;
     private String studentAddress;
-    private List<Integer> marks;
+    private List<Integer> marks = new ArrayList<>();
 
     // constructors: (3 types)
+    // non-parim/no-args-const:
 
+    public Student() {}
+
+    // all-parim/all-args-const:
+
+
+
+
+    public Student(int rollNumber, String studentName, String studentAddress, List<Integer> marks) {
+        setRollNumber(rollNumber);
+        setStudentName(studentName);
+        setStudentAddress(studentAddress);
+        setMarks(marks);
+    }
 
     // getter methods:
    public int getRollNumber()
@@ -80,4 +95,20 @@ public class Student {
         return result;
     }
 
+    // toString method (display object into string form)
+
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "rollNumber=" + rollNumber +
+                ", studentName='" + studentName + '\'' +
+                ", studentAddress='" + studentAddress + '\'' +
+                ", marks=" + marks +
+                '}';
+    }
 }
+
+
+
+
